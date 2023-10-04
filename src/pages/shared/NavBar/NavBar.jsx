@@ -33,7 +33,7 @@ const NavBar = () => {
                             <img src={defaultUser} />
                         </div>
                     </label>
-                    <button className="btn btn-active btn-neutral">LogIn</button>
+                    <button className="text-xl font-semibold btn btn-active btn-neutral">LogIn</button>
                 </div>
             </div>
         </div>
