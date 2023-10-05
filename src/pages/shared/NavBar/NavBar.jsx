@@ -4,12 +4,13 @@ import defaultUser from '../../../assets/user.png'
 const NavBar = () => {
     const menuItems = <>
 
-        <li><Link to='/to'>Home</Link></li>
+        <li><Link to='/'>Home</Link></li>
         <li><Link to='/about'>About</Link></li>
         <li><Link to='/career'>Career</Link></li>
+        <li><Link to='/login'>Login</Link></li>
     </>
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-100 mb-20 mt-5">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -33,7 +34,7 @@ const NavBar = () => {
                             <img src={defaultUser} />
                         </div>
                     </label>
-                    <button className="text-xl font-semibold btn btn-active btn-neutral">LogIn</button>
+                    <Link to='/login'><button className="text-xl font-semibold btn btn-active btn-neutral">LogIn</button></Link>
                 </div>
             </div>
         </div>
