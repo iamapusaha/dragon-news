@@ -1,5 +1,8 @@
 import { FaFacebook, FaGithub, FaGoogle, FaInstagram } from 'react-icons/fa';
 import { FaXTwitter } from "react-icons/fa6";
+import Qimg1 from '../../../assets/qZone1.png'
+import Qimg2 from '../../../assets/qZone2.png'
+import Qimg3 from '../../../assets/qZone3.png'
 
 const RightSideNav = () => {
     return (
@@ -15,7 +18,7 @@ const RightSideNav = () => {
                     Login with GitHub
                 </button>
             </div>
-            <div>
+            <div className='mb-8'>
                 <h1 className="text-xl font-semibold mb-3">Find Us On</h1>
                 <a href='#' className='flex gap-2 rounded-t items-center border p-4 w-full'>
                     <FaFacebook></FaFacebook>
@@ -30,6 +33,18 @@ const RightSideNav = () => {
                     Instragram
                 </a>
 
+            </div>
+            <div className='text-xl font-semibold mb-3 bg-[#F3F3F3] p-4'>
+                <h1 className='mb-10'>Q-Zone</h1>
+                <div className='flex justify-center mb-5'>
+                    <img src={Qimg1} alt="" />
+                </div>
+                <div className='flex justify-center mb-5'>
+                    <img src={Qimg2} alt="" />
+                </div>
+                <div className='flex justify-center mb-5'>
+                    <img src={Qimg3} alt="" />
+                </div>
             </div>
         </div>
     );
