@@ -1,11 +1,15 @@
+
+import { useContext } from "react";
 import Header from "../shared/Header/Header";
 import LeftSideNav from "../shared/LeftSideNav/LeftSideNav";
 import NavBar from "../shared/NavBar/NavBar";
 import RightSideNav from "../shared/RightSideNav/RightSideNav";
 import BreakingNews from "./BreakingNews/BreakingNews";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 
 const Home = () => {
+    const authInfo = useContext(AuthContext)
     return (
         <div>
             <Header></Header>
@@ -16,7 +20,7 @@ const Home = () => {
                     <LeftSideNav></LeftSideNav>
                 </div>
                 <div className="md:col-span-2">
-                    <h1>comming soon......................</h1>
+                    <h1>{authInfo.name}</h1>
                 </div>
                 <div>
                     <RightSideNav></RightSideNav>
