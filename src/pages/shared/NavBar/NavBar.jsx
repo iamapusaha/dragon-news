@@ -1,7 +1,19 @@
 import { Link } from "react-router-dom";
 import defaultUser from '../../../assets/user.png'
+import { useContext } from "react";
+import { AuthContext } from "../../../Providers/AuthProvider";
 
 const NavBar = () => {
+    const { user, logOut } = useContext(AuthContext);
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+                console.log('sign out succesfully');
+            })
+            .catch(error => {
+                console.error(error);
+            })
+    }
     const menuItems = <>
 
         <li><Link to='/'>Home</Link></li>
@@ -34,7 +46,12 @@ const NavBar = () => {
                             <img src={defaultUser} />
                         </div>
                     </label>
-                    <Link to='/login'><button className="text-xl font-semibold btn btn-active btn-neutral">LogIn</button></Link>
+                    {
+                        user ? <Link onClick={handleLogOut} to='/login'><button className="text-xl font-semibold btn btn-active btn-neutral">Logout</button></Link>
+                            : <Link to='/login'><button className="text-xl font-semibold btn btn-active btn-neutral">LogIn</button></Link>
+                    }
+
+
                 </div>
             </div>
         </div>
